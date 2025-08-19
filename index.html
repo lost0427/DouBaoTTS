@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>豆包 自动朗读</title>
+    <link rel="stylesheet" href="./static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>豆包 自动朗读</h1>
+            <p class="subtitle">将豆包分享链接转换为音频，随时随地聆听精彩内容</p>
+            <div class="theme-toggle" id="themeToggle">
+                <i>🌙</i>
+            </div>
+        </header>
+
+        <div class="card">
+            <form id="urlForm">
+                <div class="form-group">
+                    <label for="urlInput">豆包分享链接</label>
+                    <input type="url" id="urlInput" placeholder="https://www.doubao.com/thread/xxxxxxxxxx" required>
+                </div>
+                <button type="submit" id="submitBtn">转换为音频</button>
+            </form>
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>正在处理中，请稍候...</p>
+            <div class="progress-container">
+                <div class="progress-label">
+                    <span>处理进度</span>
+                    <span id="progressText">0%</span>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="result"></div>
+
+        <div class="instructions">
+            <h2>使用说明</h2>
+            <ul>
+                <li>复制豆包分享链接到输入框</li>
+                <li>点击"转换为音频"按钮开始处理</li>
+                <li>等待处理完成后，即可播放生成的音频</li>
+                <li>支持同时处理多个段落内容</li>
+                <li>点击右上角按钮切换黑白模式</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>© 2025 豆包自动朗读工具 | 为更好的聆听体验而生</p>
+        </footer>
+    </div>
+
+    <script src="./static/script.js"></script>
+</body>
+</html>
