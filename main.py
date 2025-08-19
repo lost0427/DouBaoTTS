@@ -41,6 +41,9 @@ def configure_logging():
 
 configure_logging()
 
+output_dir = "audios"
+os.makedirs(output_dir, exist_ok=True)
+
 def markdown_to_text(md: str) -> str:
     html = markdown.markdown(md)
     return BeautifulSoup(html, "html.parser").get_text()
@@ -179,8 +182,7 @@ async def process_url(request: Request):
         result = "".join(messages)
 
         output_dir = "audios"
-        if not os.path.exists(output_dir):
-            os.makedirs(output_dir)
+        os.makedirs(output_dir, exist_ok=True)
 
         filename = f"{uuid.uuid4().hex}.mp3"
         output_path = os.path.join(output_dir, filename)
