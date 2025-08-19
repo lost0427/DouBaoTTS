@@ -179,7 +179,8 @@ async def process_url(request: Request):
         result = "".join(messages)
 
         output_dir = "audios"
-        os.makedirs(output_dir, exist_ok=True)
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
 
         filename = f"{uuid.uuid4().hex}.mp3"
         output_path = os.path.join(output_dir, filename)
