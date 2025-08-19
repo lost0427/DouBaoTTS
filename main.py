@@ -1,5 +1,5 @@
 """
-<one line to give the program's name and a brief idea of what it does.>
+This document is part of the DouBaoTTS project.
 Copyright (C) 2025  lost0427
 
 This program is free software: you can redistribute it and/or modify
